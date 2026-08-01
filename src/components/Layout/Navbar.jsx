@@ -56,7 +56,7 @@ export default function Navbar() {
             className="font-serif font-bold text-xl text-vinotinto flex items-center gap-2 cursor-pointer md:cursor-default md:pointer-events-none"
             aria-label="Abrir menú móvil"
           >
-            VRM <Heart size={18} className="text-rojo" aria-hidden="true" />
+            Valery <Heart size={18} className="text-rojo" aria-hidden="true" />
           </a>
           
           {/* Desktop Menu */}
@@ -85,7 +85,7 @@ export default function Navbar() {
       }`}>
         <div className="p-6 flex justify-between items-center border-b border-rosasoft">
           <span className="font-serif font-bold text-xl text-vinotinto flex items-center gap-2">
-            VRM <Heart size={18} className="text-rojo" aria-hidden="true" />
+            Valery <Heart size={18} className="text-rojo" aria-hidden="true" />
           </span>
           <button onClick={closeSidebar} className="text-gray-500 hover:text-vinotinto transition-colors" aria-label="Cerrar menú">
             <X size={24} />

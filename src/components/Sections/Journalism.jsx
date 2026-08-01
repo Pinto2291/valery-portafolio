@@ -1,8 +1,48 @@
-// src/components/Sections/Journalism.jsx
-import React from 'react';
-import { Mic } from 'lucide-react';
+// src/components/Sections/Journalism.jsx 
+import React, { useState, useRef, useCallback, useEffect } from 'react';
+import { Mic, Play, Pause, Music } from 'lucide-react';
+
+// Import audio asset (Vite handles the asset URL resolution)
+import valerySong from '../../assets/music/Valery_montaña_y_mar.mp3';
 
 export default function Journalism() {
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  // Memoized play/pause toggle to prevent unnecessary re-renders
+  const togglePlay = useCallback(async () => {
+    if (!audioRef.current) return;
+    
+    try {
+      if (isPlaying) {
+        audioRef.current.pause();
+        setIsPlaying(false);
+      } else {
+        await audioRef.current.play();
+        setIsPlaying(true);
+      }
+    } catch (error) {
+      console.error("Audio playback error:", error);
+      // Fallback state reset if playback fails (e.g., browser autoplay policies)
+      setIsPlaying(false);
+    }
+  }, [isPlaying]);
+
+  // Strict dependency tracking for audio lifecycle events
+  useEffect(() => {
+    const audioEl = audioRef.current;
+    if (!audioEl) return;
+
+    // Reset playing state when audio track finishes
+    const handleEnded = () => setIsPlaying(false);
+    audioEl.addEventListener('ended', handleEnded);
+
+    // Mandatory cleanup function to prevent memory leaks
+    return () => {
+      audioEl.removeEventListener('ended', handleEnded);
+    };
+  }, []);
+
   return (
     <section id="periodismo" className="py-20 px-6 bg-rosasoft/30">
       <div className="max-w-4xl mx-auto">
@@ -27,15 +67,26 @@ export default function Journalism() {
             </p>
           </div>
           
-          <div className="p-8 bg-gradient-to-br from-rosasoft to-rosalight rounded-2xl flex flex-col justify-center items-center text-center shadow-sm">
+          <div className="p-8 bg-gradient-to-br from-rosasoft to-rosalight rounded-2xl flex flex-col justify-center items-center text-center shadow-sm relative overflow-hidden">
+            {/* Background decorative element */}
+            <Music size={140} className="absolute -right-6 -bottom-6 text-white/30 pointer-events-none" />
+            
+            {/* Hidden native audio element for DOM tracking */}
+            <audio ref={audioRef} src={valerySong} preload="metadata" />
+
             <button 
-              className="w-16 h-16 bg-white rounded-full flex items-center justify-center mb-4 shadow-md hover:scale-105 transition-transform"
-              aria-label="Reproducir episodio"
+              onClick={togglePlay}
+              className="w-16 h-16 bg-white text-vinotinto rounded-full flex items-center justify-center mb-4 shadow-md hover:scale-105 transition-transform z-10"
+              aria-label={isPlaying ? "Pausar canción" : "Reproducir canción"}
             >
-              <div className="w-0 h-0 border-t-8 border-t-transparent border-l-12 border-l-vinotinto border-b-8 border-b-transparent ml-1" />
+              {isPlaying ? (
+                <Pause size={28} className="fill-current" />
+              ) : (
+                <Play size={28} className="fill-current ml-1" />
+              )}
             </button>
-            <span className="text-vinotinto font-semibold">Reproducir Piloto</span>
-            <span className="text-xs text-gray-500 mt-1">"Titulares de mi vida"</span>
+            <span className="text-vinotinto font-semibold z-10 text-lg">Valery Montaña y Mar</span>
+            <span className="text-sm text-gray-700 mt-1 z-10 italic font-medium">Canción</span>
           </div>
         </div>
       </div>
