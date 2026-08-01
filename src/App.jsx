@@ -29,7 +29,7 @@ export default function App() {
       </main>
 
       <footer className="bg-vinotinto py-6 text-center text-rosasoft text-sm border-t border-white/10">
-        <p>© {new Date().getFullYear()} Creado con amor para Valery Reichell Medina.</p>
+        <p>© {new Date().getFullYear()} Creado con amor por Ignacio Pinto para Valery Reichell Medina.</p>
       </footer>
     </div>
   );
