@@ -1,0 +1,10 @@
+# .gitattributes
+# 1. Place this file in the root directory of your repository.
+# 2. It normalizes line endings (LF vs CRLF) across different operating systems, preventing Git warnings.
+
+* text=auto eol=lf
+*.js text eol=lf
+*.jsx text eol=lf
+*.css text eol=lf
+*.html text eol=lf
+*.json text eol=lf
