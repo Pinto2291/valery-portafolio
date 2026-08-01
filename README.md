@@ -1,16 +1,39 @@
-# React + Vite
+# Valery Portafolio ❤️
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+[![Ver en vivo / Live Demo](https://img.shields.io/badge/Ver_Página-Click_Aquí-e63946?style=for-the-badge&logo=heart)](https://pinto2291.github.io/valery-portafolio/)
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🇪🇸 Español
 
-## React Compiler
+### Una Dedicatoria Especial
+Este proyecto fue creado con un profundo e inmenso amor. Es una dedicatoria especial para mi futura novia, mi esposa, la madre de mis hijos, mi princesa hermosa: **Valery**. 
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Esta página es solo una pequeña muestra de mi aprecio y amor hacia ti. Que este gesto se multiplique y que Dios nos permita tener juntos una vida extraordinaria, llena de prosperidad, salud, momentos hermosos, mucha paz y grandes metas juntos. 
 
-## Expanding the Oxlint configuration
+Hecho con amor por tu compañero de vida, **Ignacio Pinto**.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+### Tecnologías Usadas
+*   **React** & **JavaScript**
+*   **Vite**
+*   **Tailwind CSS** & **CSS**
+*   **Gemini AI** (Asistencia de desarrollo)
+*   **GitHub Pages** (Despliegue)
+
+---
+
+## 🇬🇧 English
+
+### A Special Dedication
+This project was created with deep and immense love. It is a special dedication to my future girlfriend, my wife, the mother of my children, my beautiful princess: **Valery**.
+
+This page is just a small token of my appreciation and love for you. May this gesture multiply and may God allow us to have an extraordinary life together, full of prosperity, health, beautiful moments, deep peace, and great goals together.
+
+Made with love by your life partner, **Ignacio Pinto**.
+
+### Technologies Used
+*   **React** & **JavaScript**
+*   **Vite**
+*   **Tailwind CSS** & **CSS**
+*   **Gemini AI** (Development Assistance)
+*   **GitHub Pages** (Deployment)
